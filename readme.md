@@ -101,9 +101,11 @@ The `train_episodes` of each task is specified in `budget.py`.
 
 By default, the logging data will be stored in `logs/` folder with csv format. If you use `--debug` flag, it will be stored in `debug/` folder. 
 
-## Plotting
+## Logging and Plotting
 
-You can plot the learning curves and aggregation plots (e.g., Figure 3 and 6) using `vis.ipynb` jupyter notebook.
+After the logging data is stored, you can plot the learning curves and aggregation plots (e.g., Figure 3 and 6) using `vis.ipynb` jupyter notebook.
+
+We also provide our logging data used in the paper shared in [google drive](https://drive.google.com/file/d/1bX8lRtm6IYihCmATzgVU7Enq4xuSFAVq/view?usp=sharing) (< 400 MB).
 
 ## Acknowledgement
 
