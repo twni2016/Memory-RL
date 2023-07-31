@@ -1,5 +1,5 @@
 # Evaluating Memory and Credit Assignment in Memory-Based RL
-This is the official code for the paper "When Do Transformers Shine in RL? Decoupling Memory from Credit Assignment".  
+This is the official code for the paper ["When Do Transformers Shine in RL? Decoupling Memory from Credit Assignment"](https://arxiv.org/abs/2307.03864).  
 
 ## Modular Design
 The code has a modular design which requires *three* configuration files. We hope that such design could facilitate future research on different environments, RL algorithms, and sequence models.
@@ -107,3 +107,6 @@ You can plot the learning curves and aggregation plots (e.g., Figure 3 and 6) us
 The code is largely based on prior work:
 - [POMDP Baselines](https://github.com/twni2016/pomdp-baselines)
 - [Hugging Face Transformers](https://github.com/huggingface/transformers)
+
+## Questions
+If you have any questions, please raise an issue or send an email to Tianwei (tianwei.ni@mila.quebec).
