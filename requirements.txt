@@ -1,0 +1,12 @@
+absl-py==1.3.0
+gym==0.21.0
+matplotlib==3.5.2
+ml-collections @ git+https://github.com/google/ml_collections.git@cea60d600434c9d040d4cb3b261d500f08fb828a
+numpy==1.23.0
+optax==0.1.3
+pandas==1.4.1
+pycolab==1.2
+seaborn==0.12.0
+tensorflow==2.9.0
+torch==1.12.1
+transformers==4.22.1

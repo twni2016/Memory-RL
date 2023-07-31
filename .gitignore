@@ -1,0 +1,15 @@
+.DS_Store
+.vscode/
+__pycache__/
+.ipynb_checkpoints
+*.pyc
+.cache/
+*.sh
+
+# logs, a soft link to disk
+logs
+logs/
+debug/
+
+# slurm
+*.out 
