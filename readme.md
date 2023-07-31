@@ -40,7 +40,7 @@ python main.py \
     --config_env configs/envs/tmaze_passive.py \
     --config_env.env_name 1500 \
     --config_rl configs/rl/dqn_default.py \
-    --train_episodes 8000 \
+    --train_episodes 6700 \
     --config_seq configs/seq_models/gpt_default.py \
     --config_seq.sampled_seq_len -1 \
 ```
@@ -97,8 +97,11 @@ python main.py \
     --config_seq.model.seq_model_config.n_head 2 \
 ```
 
-## Plotting
+The `train_episodes` of each task is specified in `budget.py`. 
+
 By default, the logging data will be stored in `logs/` folder with csv format. If you use `--debug` flag, it will be stored in `debug/` folder. 
+
+## Plotting
 
 You can plot the learning curves and aggregation plots (e.g., Figure 3 and 6) using `vis.ipynb` jupyter notebook.
 
