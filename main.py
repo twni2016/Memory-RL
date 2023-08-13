@@ -84,14 +84,14 @@ def main(argv):
 
     ## now only use env and time as directory name
     run_name = f"{config_env.env_type}/{config_env.env_name}/"
-    config_seq, name = config_seq.name_fn(config_seq, env.max_episode_steps)
-    # run_name += name
+    config_seq, _ = config_seq.name_fn(config_seq, env.max_episode_steps)
     max_training_steps = int(FLAGS.train_episodes * env.max_episode_steps)
-    config_rl, name = config_rl.name_fn(
+    config_rl, _ = config_rl.name_fn(
         config_rl, env.max_episode_steps, max_training_steps
     )
-    # run_name += name
-    run_name += f"{system.now_str()}+{jobid}-{pid}"
+    uid = f"{system.now_str()}+{jobid}-{pid}"
+    run_name += uid
+    FLAGS.run_name = uid
 
     format_strs = ["csv"]
     if FLAGS.debug:
