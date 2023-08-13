@@ -5,8 +5,8 @@ This is the official code for the paper ["When Do Transformers Shine in RL? Deco
 The code has a modular design which requires *three* configuration files. We hope that such design could facilitate future research on different environments, RL algorithms, and sequence models.
 
 - `config_env`: specify the environment, with `config_env.env_name` specifying the exact (memory / credit assignment) length of the task
-    - T-Maze Passive
-    - T-Maze Active
+    - Passive T-Maze
+    - Active T-Maze
     - Passive Visual Match
     - Key-to-Door
 - `config_rl`: specify the RL algorithm and its hyperparameters
@@ -23,7 +23,7 @@ We use python 3.7+ and list the basic requirements in `requirements.txt`.
 Below are example commands to reproduce the *main* results shown in Figure 3 and 6. 
 For the ablation results, please adjust the corresponding hyperparameters.
 
-To run T-Maze Passive with a memory length of 50 with LSTM-based agent:
+To run Passive T-Maze with a memory length of 50 with LSTM-based agent:
 ```bash
 python main.py \
     --config_env configs/envs/tmaze_passive.py \
@@ -34,7 +34,7 @@ python main.py \
     --config_seq.sampled_seq_len -1 \
 ```
 
-To run T-Maze Passive with a memory length of 1500 with Transformer-based agent:
+To run Passive T-Maze with a memory length of 1500 with Transformer-based agent:
 ```bash
 python main.py \
     --config_env configs/envs/tmaze_passive.py \
@@ -45,7 +45,7 @@ python main.py \
     --config_seq.sampled_seq_len -1 \
 ```
 
-To run T-Maze Active with a memory length of 20 with Transformer-based agent:
+To run Active T-Maze with a memory length of 20 with Transformer-based agent:
 ```bash
 python main.py \
     --config_env configs/envs/tmaze_active.py \
@@ -101,9 +101,11 @@ The `train_episodes` of each task is specified in `budget.py`.
 
 By default, the logging data will be stored in `logs/` folder with csv format. If you use `--debug` flag, it will be stored in `debug/` folder. 
 
-## Plotting
+## Logging and Plotting
 
-You can plot the learning curves and aggregation plots (e.g., Figure 3 and 6) using `vis.ipynb` jupyter notebook.
+After the logging data is stored, you can plot the learning curves and aggregation plots (e.g., Figure 3 and 6) using `vis.ipynb` jupyter notebook.
+
+We also provide our logging data used in the paper shared in [google drive](https://drive.google.com/file/d/1bX8lRtm6IYihCmATzgVU7Enq4xuSFAVq/view?usp=sharing) (< 400 MB).
 
 ## Acknowledgement
 
@@ -112,4 +114,4 @@ The code is largely based on prior work:
 - [Hugging Face Transformers](https://github.com/huggingface/transformers)
 
 ## Questions
-If you have any questions, please raise an issue or send an email to Tianwei (tianwei.ni@mila.quebec).
+If you have any questions, please raise an issue (preferred) or send an email to Tianwei (tianwei.ni@mila.quebec).
