@@ -1,5 +1,9 @@
 # Evaluating Memory and Credit Assignment in Memory-Based RL
-This is the official code for the paper ["When Do Transformers Shine in RL? Decoupling Memory from Credit Assignment"](https://arxiv.org/abs/2307.03864).  
+This is the official code for the paper
+
+["When Do Transformers Shine in RL? Decoupling Memory from Credit Assignment"](https://arxiv.org/abs/2307.03864), **NeurIPS 2023 (oral)**
+
+by [Tianwei Ni](https://twni2016.github.io/), [Michel Ma](https://openreview.net/profile?id=~Michel_Ma1), [Benjamin Eysenbach](https://ben-eysenbach.github.io/), and [Pierre-Luc Bacon](http://pierrelucbacon.com/). 
 
 ## Modular Design
 The code has a modular design which requires *three* configuration files. We hope that such design could facilitate future research on different environments, RL algorithms, and sequence models.
