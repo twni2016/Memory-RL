@@ -3,7 +3,7 @@ This is the official code for the paper
 
 ["When Do Transformers Shine in RL? Decoupling Memory from Credit Assignment"](https://arxiv.org/abs/2307.03864), **NeurIPS 2023 (oral)**
 
-by [Tianwei Ni](https://twni2016.github.io/), [Michel Ma](https://openreview.net/profile?id=~Michel_Ma1), [Benjamin Eysenbach](https://ben-eysenbach.github.io/), and [Pierre-Luc Bacon](http://pierrelucbacon.com/). 
+by [Tianwei Ni](https://twni2016.github.io/), [Michel Ma](https://scholar.google.com/citations?user=capMFX8AAAAJ&hl=en), [Benjamin Eysenbach](https://ben-eysenbach.github.io/), and [Pierre-Luc Bacon](http://pierrelucbacon.com/). 
 
 ## Modular Design
 The code has a modular design which requires *three* configuration files. We hope that such design could facilitate future research on different environments, RL algorithms, and sequence models.
@@ -15,7 +15,7 @@ The code has a modular design which requires *three* configuration files. We hop
     - Key-to-Door (based on [Raposo et al., 2021])
 - `config_rl`: specify the RL algorithm and its hyperparameters
     - DQN (with epsilon greedy)
-    - SAC-Discrete (we find `--freeze_critic` can prevent gradient explosion found in [Ni et al., 2022](https://arxiv.org/abs/2110.05038))
+    - SAC-Discrete (we find `--freeze_critic` can prevent gradient explosion, see the discussion in Appendix C.1 in the latest version of the arXiv paper). 
 - `config_seq`: specify the sequence model and its hyperparameters including training sequence length `config_seq.sampled_seq_len` and number of layers `--config_seq.model.seq_model_config.n_layer` 
     - LSTM [Hochreiter and Schmidhuber, 1997]
     - Transformer (GPT-2) [Radford et al., 2019]
