@@ -11,3 +11,6 @@ def infinite_horizon_terminal(env: gym.Env, done: bool, info: dict) -> bool:
     else:
         terminal = True
     return terminal
+
+
+# meta RL terminals

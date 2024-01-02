@@ -1,6 +1,5 @@
 import numpy as np
 import random
-import torch
 import datetime
 import dateutil.tz
 
@@ -16,14 +15,10 @@ def reproduce(seed):
     assert seed >= 0
     np.random.seed(seed)
     random.seed(seed)
-    torch.manual_seed(seed)
-    if torch.cuda.is_available():
-        torch.cuda.manual_seed(seed)
-        torch.cuda.manual_seed_all(seed)
 
 
 def now_str():
     now = datetime.datetime.now(dateutil.tz.tzlocal())
     return now.strftime(
-        "%Y-%m-%d-%H:%M:%S"
+        "%Y-%m-%d-%H-%M-%S"
     )  # may cause collision, please use PID to prevent

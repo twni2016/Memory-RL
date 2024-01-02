@@ -8,6 +8,7 @@ def get_config():
 
     config.is_markov = True
     config.is_attn = False
+    config.lr = 3e-4
 
     config.sampled_seq_len = 1
 

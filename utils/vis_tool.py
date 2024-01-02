@@ -60,7 +60,6 @@ def walk_through(
     end: int,
     steps: int,
     window: int,
-    cutoff: float = 0.9,
     delete: bool = False,
 ):
     def isnan(number):
@@ -71,14 +70,11 @@ def walk_through(
             df = df.dropna(subset=[metric])  # remove NaN rows
         except KeyError:
             print("!!key error csv", run)
-            if delete:
-                shutil.rmtree(run)
-                print("deleted")
             return None
 
-        if isnan(df["env_steps"].iloc[-1]) or df["env_steps"].iloc[-1] < cutoff * end:
+        if isnan(df["env_steps"].iloc[-1]) or df["env_steps"].iloc[-1] < 0.9 * end:
             # an incomplete run
-            print("!!incomplete csv", run, "num steps", df["env_steps"].iloc[-1])
+            print("!!incomplete csv", run, df["env_steps"].iloc[-1], end=" ")
             if delete:
                 shutil.rmtree(run)
                 print("deleted")
@@ -91,8 +87,6 @@ def walk_through(
 
         # update the columns with interpolated values and aligned steps
         aligned_step = np.linspace(start, end, steps).astype(np.int32)
-        ## we only do interpolation, not extrapolation
-        aligned_step = aligned_step[aligned_step <= df["env_steps"].iloc[-1]]
         aligned_value = np.interp(aligned_step, df["env_steps"], df[metric])
 
         # enlarge or reduce to same number of rows
@@ -123,9 +117,6 @@ def walk_through(
             df = pd.read_csv(open(csv_path))
         except pd.errors.EmptyDataError:
             print("!!empty csv", run)
-            if delete:
-                shutil.rmtree(run)
-                print("deleted")
             continue
 
         df = smooth(df)

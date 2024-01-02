@@ -15,6 +15,7 @@ def get_config():
     config.clip = False
     config.max_norm = 1.0
     config.use_l2_norm = False
+    config.lr = 3e-4
 
     # fed into Module
     config.model = ConfigDict()
@@ -23,19 +24,22 @@ def get_config():
     config.model.seq_model_config = ConfigDict()
     config.model.seq_model_config.name = "lstm"
     config.model.seq_model_config.hidden_size = 128
-    config.model.seq_model_config.n_layer = 1
 
     # embedders
     config.model.observ_embedder = ConfigDict()
     config.model.observ_embedder.name = "mlp"
-    config.model.observ_embedder.hidden_size = 32
+    config.model.observ_embedder.hidden_dims = (32,)
+    config.model.observ_embedder.activate_final = True
+    config.model.observ_embedder.add_layernorm = False
+    config.model.observ_embedder.layernorm_use_bias_scale = True
 
     config.model.action_embedder = ConfigDict()
     config.model.action_embedder.name = "mlp"
-    config.model.action_embedder.hidden_size = 16
+    config.model.action_embedder.hidden_dims = (16,)
+    config.model.action_embedder.activate_final = True
+    config.model.action_embedder.add_layernorm = False
+    config.model.action_embedder.layernorm_use_bias_scale = True
 
-    config.model.reward_embedder = ConfigDict()
-    config.model.reward_embedder.name = "mlp"
-    config.model.reward_embedder.hidden_size = 0
+    config.model.reward_embedder = None
 
     return config
