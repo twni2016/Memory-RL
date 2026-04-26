@@ -51,7 +51,7 @@ By default, the logging data will be stored in `logs/` folder with csv format. I
 
 After the logging data is stored, you can plot the learning curves (Figure 8) using [`vis.ipynb`](https://github.com/twni2016/Memory-RL/blob/pybullet_jax/vis.ipynb) jupyter notebook.
 
-We also provide our logging data used in Figure 8 shared in [google drive](https://drive.google.com/file/d/11dVb-4j7KvS0mrZ-2avl2TwyeaE3jTva/view?usp=sharing) (< 30 MB).
+We also provide our logging data used in Figure 8 shared in [google drive](https://drive.google.com/file/d/1kCkXW6hxmCfNSKE3GaVIdMBvot_Yyf23/view?usp=sharing) (< 30 MB).
 
 
 # Acknowledgement
