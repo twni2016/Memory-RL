@@ -111,7 +111,7 @@ By default, the logging data will be stored in `logs/` folder with csv format. I
 
 After the logging data is stored, you can plot the learning curves and aggregation plots (e.g., Figure 3 and 6) using [`vis.ipynb`](https://github.com/twni2016/Memory-RL/blob/main/vis.ipynb) jupyter notebook.
 
-We also provide our logging data used in the paper shared in [google drive](https://drive.google.com/file/d/1bX8lRtm6IYihCmATzgVU7Enq4xuSFAVq/view?usp=sharing) (< 400 MB).
+We also provide our logging data used in the paper shared in [google drive](https://drive.google.com/file/d/19LOhohlTLjEn9RkG49sKdfmxsnQDj29E/view?usp=sharing) (< 400 MB).
 
 ## Acknowledgement
 
